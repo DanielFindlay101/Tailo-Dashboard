@@ -1,9 +1,7 @@
 "use client";
 import { Button } from "../ui/button";
-import { useState } from "react";
 import DocumentCard from "./documentCard";
 import { DocumentPlusIcon } from "@heroicons/react/20/solid";
-import { BaseModal } from "../modals/baseModal";
 
 const documents = [
   {
@@ -29,15 +27,11 @@ const documents = [
 ];
 
 export default function DocumentList() {
-  const [openModal, setOpenModal] = useState(false);
-  const handleModal = () => {
-    setOpenModal(!openModal);
-  };
   return (
     <div className="p-2 flex flex-col gap-4 ">
       <div className="flex justify-between items-center mb-2">
         <h3 className="text-lg font-semibold">Your Documents</h3>
-        <Button className="bg-slate-100" onClick={handleModal}>
+        <Button className="bg-slate-100">
           <DocumentPlusIcon className="w-6 h-6" />
           Upload new document
         </Button>
@@ -49,7 +43,6 @@ export default function DocumentList() {
           status={document.status}
         />
       ))}
-      <BaseModal open={openModal} handleModal={handleModal} />
     </div>
   );
 }

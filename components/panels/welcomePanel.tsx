@@ -1,44 +1,63 @@
 "use client";
 import { useState } from "react";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  SparklesIcon,
+  CircleStackIcon,
+  PencilSquareIcon,
+} from "@heroicons/react/20/solid";
 
 export default function WelcomePanel() {
   const [open, setOpen] = useState(false);
   return (
     <div
-      className={`bg-slate-900 p-4 rounded-lg ${
-        open ? "ring-2 ring-green-500" : ""
+      className={`bg-secondary p-4 rounded-lg ${
+        open ? "ring-2 ring-accent" : ""
       }`}
     >
       <div className="flex justify-between">
-        <p className="text-base font-semibold">What&apos;s new in Tailo 🚀</p>
+        <h3 className="text-xl font-semibold">What&apos;s new in Tailo 🚀</h3>
         {open ? (
           <ChevronUpIcon
-            className="h-6 w-6 text-slate-100"
+            className="h-6 w-6 text-foreground"
             onClick={() => setOpen(false)}
           />
         ) : (
           <ChevronDownIcon
-            className="h-6 w-6 text-slate-100"
+            className="h-6 w-6 text-foreground"
             onClick={() => setOpen(true)}
           />
         )}
       </div>
       {open && (
-        <div className="mt-2 flex justify-evenly">
-          <div className="flex items-center gap-2">
-            <div className="bg-slate-900 ring-2 ring-green-500 h-8 w-8 rounded-md"></div>
-            <p className="text-sm">Tailo v1.0.0 released</p>
+        <>
+          <span className="w-full mb-4">
+            <p className="text-center text-lg text-foreground">
+              Tailo 2.0 released! Check out what's new!
+            </p>
+          </span>
+          <div className="mt-2 flex justify-evenly">
+            <div className="flex items-center gap-2">
+              <SparklesIcon className="w-6 h-6 text-accent " />
+              <p className="text-sm text-foreground">
+                Introducing new AI features!
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <CircleStackIcon className="w-6 h-6 text-accent" />
+              <p className="text-sm text-foreground">
+                Backend stability (finally...)
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <PencilSquareIcon className="w-6 h-6 text-accent" />
+              <p className="text-sm text-foreground">
+                Note taking abilities are here!
+              </p>
+            </div>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="bg-slate-900 ring-2 ring-green-500 h-8 w-8 rounded-md"></div>
-            <p className="text-sm">Tailo v1.0.1 released</p>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="bg-slate-900 ring-2 ring-green-500 h-8 w-8 rounded-md"></div>
-            <p className="text-sm">Tailo v1.0.2 released</p>
-          </div>
-        </div>
+        </>
       )}
     </div>
   );

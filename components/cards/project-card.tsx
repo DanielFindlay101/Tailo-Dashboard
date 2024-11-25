@@ -1,5 +1,4 @@
-import * as React from "react";
-
+"use client";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -18,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { toast } from "sonner";
 
 export function ProjectCard() {
   return (
@@ -53,7 +53,21 @@ export function ProjectCard() {
         </form>
       </CardContent>
       <CardFooter className="flex justify-end">
-        <Button>Create</Button>
+        <Button
+          className="bg-accent"
+          onClick={() =>
+            toast("New project created!", {
+              description: "Your project has been created successfully.",
+              className: "bg-slate-950 text-white border-slate-800",
+              action: {
+                label: "Undo",
+                onClick: () => console.log("Undo"),
+              },
+            })
+          }
+        >
+          Create
+        </Button>
       </CardFooter>
     </Card>
   );

@@ -29,8 +29,10 @@
     "react": "^18",
     "react-dom": "^18",
     "recharts": "^2.13.0",
+    "sonner": "^1.7.0",
     "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tw-colors": "^3.3.2"
   },
   "devDependencies": {
     "@types/node": "^20",

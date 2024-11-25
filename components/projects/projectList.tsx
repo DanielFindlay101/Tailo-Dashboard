@@ -46,7 +46,7 @@ export default function ProjectList() {
         </div>
       </CardContent>
       <CardFooter className="flex justify-end">
-        <Button>Create</Button>
+        <Button className="bg-accent">Create</Button>
       </CardFooter>
     </Card>
   );

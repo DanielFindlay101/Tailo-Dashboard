@@ -38,10 +38,10 @@ export default function ProjectListCard({
   }
 
   return (
-    <div className="bg-slate-800 flex flex-col gap-3 rounded-lg p-2 hover:bg-slate-700 hover:cursor-pointer">
+    <div className="bg-tertiary flex flex-col gap-3 rounded-lg p-2 hover:bg-tertiary-hover hover:cursor-pointer">
       <div className="flex justify-between">
         <p className="font-semibold text-lg">{title}</p>
-        <EllipsisVerticalIcon className="h-6 w-6 text-slate-100" />
+        <EllipsisVerticalIcon className="h-6 w-6" />
       </div>
       <div
         className={`flex gap-2 rounded-full px-2 items-center justify-center ${pillStyle}`}
