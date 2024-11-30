@@ -17,7 +17,7 @@ export default function TopNavbar() {
   return (
     <div
       className="w-screen sticky top-0 z-50 bg-background h-12 p-4
-       [&>*]:text-foreground [&>*]:hover:text-foreground-hover [&>*]:hover:cursor-pointer
+       *:text-foreground hover:*:text-foreground-hover hover:*:cursor-pointer
      border-slate-700 border-b-2 flex items-center justify-between gap-2"
     >
       <BuildingStorefrontIcon className="h-8 w-8" />
